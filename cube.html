@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="党媛媛的简历,web前端,css3+js实现3d旋转,3d效果手写,css3+js炫酷效果">
+    <meta name="description" content="css3+js实现盒子3d旋转效果文章详情">
+    <meta name="author" content="党媛媛的简历">
+    <title>党媛媛的简历 » 手写,css3+js炫酷效果 文章详情</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/syntaxy.light.min.css">
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+    <style type="text/css">
+
+        .container-box {
+            width: 300px;
+            height: 300px;
+            /*border: 1px solid #333333;*/
+            margin: 150px auto;
+            perspective: 20000px;
+        }
+        .box {
+            width: 300px;
+            height: 300px;
+            /*控制子元素保持3D转换*/
+            transform-style: preserve-3d;
+            /*测试代码*/
+            /*transform: rotateX(45deg)rotateY(45deg);*/
+            animation: ro 5s linear infinite;
+        }
+        @keyframes ro  {
+            0%{
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            100%{
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+        .box-page {
+            width: 300px;
+            height: 300px;
+            /*   位置初始化 */
+            position: absolute;
+            transform-style: preserve-3d;
+        }
+
+        .top {
+            /*background: greenyellow;*/
+            transform: translateZ(150px);
+            animation: top 10s 5s linear infinite;
+
+        }
+        @keyframes top {
+            50% {
+                transform: translateZ(150px);
+            }
+            70% {
+                transform: translateZ(300px);
+            }
+            80% {
+                transform: translateZ(150px);
+            }
+            100% {
+                transform: translateZ(150px);
+            }
+        }
+        .bottom {
+            /*background: deeppink;*/
+            transform: translateZ(-150px);
+            animation: bottom 10s 5s linear infinite;
+        }
+        @keyframes bottom {
+            50% {
+                transform: translateZ(-150px);
+            }
+            70% {
+                transform: translateZ(-300px);
+            }
+            80% {
+                transform: translateZ(-150px);
+            }
+            100% {
+                transform: translateZ(-150px);
+            }
+        }
+        .left {
+            /*background: blueviolet;*/
+            transform: translateX(-150px) rotateY(-90deg);
+            animation: left 10s 5s linear infinite;
+        }
+        @keyframes left {
+            50% {
+                transform: translateX(-150px) rotateY(-90deg);
+            }
+            70% {
+                transform: translateX(-300px) rotateY(-90deg);
+            }
+            80% {
+                transform: translateX(-150px) rotateY(-90deg);
+            }
+            100% {
+                transform: translateX(-150px) rotateY(-90deg);
+            }
+        }
+        .right {
+            /*background: dodgerblue;*/
+            transform: translateX(150px) rotateY(90deg);
+            animation: right 10s 5s linear infinite;
+        }
+        @keyframes right {
+            50% {
+                transform: translateX(150px) rotateY(90deg);
+            }
+            70% {
+                transform: translateX(300px) rotateY(90deg);
+            }
+            80% {
+                transform: translateX(150px) rotateY(90deg);
+            }
+            100% {
+                transform: translateX(150px) rotateY(90deg);
+            }
+        }
+        .before {
+            /*background:hotpink;*/
+            transform: translateY(150px) rotateX(-90deg);
+            animation: before 10s 5s linear infinite;
+        }
+        @keyframes before {
+            50% {
+                transform: translateY(150px) rotateX(-90deg);
+            }
+            70% {
+                transform: translateY(300px) rotateX(-90deg);
+            }
+            80% {
+                transform: translateY(150px) rotateX(-90deg);
+            }
+            100% {
+                transform: translateY(150px) rotateX(-90deg);
+            }
+        }
+        .after {
+            /*background: yellow;*/
+            transform: translateY(-150px) rotateX(90deg);
+            animation: after 10s 5s linear infinite;
+        }
+        @keyframes after {
+            50% {
+                transform: translateY(-150px) rotateX(90deg);
+            }
+            70% {
+                transform: translateY(-300px) rotateX(90deg);
+            }
+            80% {
+                transform: translateY(-150px) rotateX(90deg);
+            }
+            100% {
+                transform: translateY(-150px) rotateX(90deg);
+            }
+        }
+
+        .box-page div:nth-child(1) {
+            animation: a1 10s 5s infinite;
+        }
+        .box-page div:nth-child(2) {
+            animation: a1 10s 5s infinite;
+        }
+        .box-page div:nth-child(3) {
+            animation: a1 10s 5s infinite;
+        }
+        .box-page div:nth-child(4) {
+            animation: a1 10s 5s infinite;
+        }
+        .box-page div:nth-child(5) {
+            animation: a1 10s 5s infinite;
+        }
+        .box-page div:nth-child(6) {
+            animation: a1 10s 5s infinite;
+        }
+        .box-page div:nth-child(7) {
+            animation: a1 10s 5s infinite;
+        }
+        .box-page div:nth-child(8) {
+            animation: a1 10s 5s infinite;
+        }
+        .box-page div:nth-child(9) {
+            animation: a1 10s 5s infinite;
+        }
+
+
+        @keyframes a1 {
+            50%{
+                transform:rotateZ(0deg) rotateX(0deg);
+            }
+            60%{
+                transform: rotateZ(360deg) rotateX(180deg);
+            }
+            70%{
+                transform:rotateZ(720deg) rotateX(360deg);
+            }
+            80%{
+                transform: rotateZ(360deg) rotateX(180deg);
+            }
+            90%{
+                transform: rotateZ(0deg) rotateX(0deg);
+            }
+            100%{
+                transform: rotateZ(0deg) rotateX(0deg);
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class=" container">
+        <div class="center">
+            <p class="myid">炫酷的3D魔方旋转效果</p>
+        </div>
+        <div class="my-sort center">
+            <a href="index.html">简历</a>
+        </div>
+        <div id="artical-detail">
+            <p>平时看到动画下意识就觉得很难，出于畏惧心理老是不敢去碰，但世上无难事只怕有心人，认真分析以后发现其实也不过如此</p>
+            <p>周末闲来无事，就自己写了一个效果，就给大家展示一下吧，欢迎吐槽呀。</p>
+            <p>IE不支持 <span class="cspan">transform-style: preserve-3d</span>，真是很遗憾啊！</p>
+
+            <div class="container-box">
+                <div class="box">
+                    <div class="box-page top"></div>
+                    <div class="box-page bottom"></div>
+                    <div class="box-page left"></div>
+                    <div class="box-page right"></div>
+                    <div class="box-page before"></div>
+                    <div class="box-page after"></div>
+                </div>
+            </div>
+
+
+        </div>
+            <h5>结语：</h5>
+            <p>越学习越觉得有志者事竟成，很多看起来很难的东西都是纸老虎，万事难逃‘认真’二字，当时觉得再大的困难都会变得没问题。
+                别输给自己。</p>
+            <p class="artical-detail-date">2019.11.1</p>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var arr = document.querySelectorAll(".box-page");
+    //遍历每一个面
+    for(var n=0 ; n<arr.length ; n++) {
+        //每一个面有三行
+        for (var r=0 ; r<3 ; r++) {
+            //每一行有三列
+            for (var c=0 ; c<3 ; c++) {
+                // 创建元素
+                var divs =document.createElement("div")
+                divs.style.cssText = "width:100px;height:100px;border:1px solid #fff;box-sizing:border-box;" +
+                    "position:absolute;background-image:url(images/cube-"+n+".jpg);background-size:300px 300px";
+                arr[n].appendChild(divs);
+
+                divs.style.left = c*100+"px";
+                divs.style.top = r*100+"px";
+
+                divs.style.backgroundPositionX = -c*100+"px";
+                divs.style.backgroundPositionY = -r*100+"px";
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="党媛媛的简历,web前端,纯手写js实现BMI计算器，BMI计算器">
+    <meta name="description" content="纯手写js实现BMI计算器">
+    <meta name="author" content="党媛媛的简历">
+    <title>党媛媛的简历 »纯手写js实现BMI计算器</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/syntaxy.light.min.css">
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+    <style type="text/css">
+        form {
+            width: 300px;
+            margin: 50px auto;
+        }
+       form span {
+            width: 100px;
+            padding: 5px;
+           display: inline-block;
+        }
+        input[type=button] {
+            float: right;
+            margin-right: 39px;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class=" container">
+
+        <div class="center">
+            <p class="myid">纯手写js实现BMI计算器效果</p>
+        </div>
+        <div class="my-sort center">
+            <a href="index.html">简历</a>
+        </div>
+        <div id="artical-detail">
+            <p>纯手写js实现BMI计算器，可以通过射高体重的计算来判断身体状况，快来测一下吧！</p>
+            <p>没有写样式，好像有点丑，大家就凑合看吧。</p>
+
+            <form method=post>
+                <span>你的身高(cm):</span> <input type="text" name="height"><br>
+                <br/>
+                <span>你的体重(kg):</span> <input type="text" name="weight"><br>
+                <br/>
+                <input type="button" value="开始计算" onclick="Cal(this.form)">
+                <br/>
+                <br/>
+                <span>你的理想体重:</span> <input type="text" name="IW"><br/>
+                <br/>
+                <span>您的BMI:</span> <input type="text" name="BMI">
+            </form>
+        </div>
+        <h5>结语：</h5>
+        <p>千里之行始于足下，学习的道路慢慢而修远，需要我们一步一个脚印，集跬步至千里，一起加油吧！</p>
+        <p class="artical-detail-date">2019.11.1</p>
+
+    </div>
+</div>
+</div>
+
+<script type="text/javascript">
+    var BMI={};
+    BMI.getBMI=function(a,b){
+        var bmi=b/((a/100)*(a/100));
+        return bmi;
+    };
+    BMI.idealweight=function(a){
+        var x=(a-100)*0.9;
+        return x;
+    };
+    function Cal(form){
+        var a=eval(form.height.value);
+        var b=eval(form.weight.value);
+        var bmi=eval(form.BMI.value);
+        var bmiValue =BMI.getBMI(a,b);
+        BMI.disp_alert(bmiValue );
+        form.IW.value=BMI.idealweight(a);
+        form.BMI.value= bmiValue ;
+    }
+    BMI.disp_alert = function(bmi){
+        if (bmi < 18.5)
+        {
+            alert("你的体重太轻,要多吃点哟!");
+        }
+        else if (bmi >= 18.5 && bmi < 25)
+        {
+            alert("亲,你的体重正常,要继续保持哟!");
+        }
+        else if (bmi >= 25 && bmi< 30)
+        {
+            alert("亲,您的体重过重,要减肥了!");
+        }
+        else
+        {
+            alert("亲,你确实要减肥了!");
+        }
+    }
+</script>
+</body>
+</html>

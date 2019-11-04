@@ -1,1 +1,1 @@
-# yuanyuanDang.github.io
+# 纯静态个人博客
