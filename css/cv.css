@@ -5,6 +5,7 @@ body{
 }
 .container{
     max-width: 1200px!important;
+
     overflow: hidden;
 }
 .fl{
@@ -15,6 +16,7 @@ body{
     float: right;
     /*background: #FFFFFF;*/
 }
+
 
 .content{
     padding: 0;
@@ -594,13 +596,14 @@ h4{
 .alert-warning {
     background: #EEEEEE;
     font-size: 20px;
+    border: none;
 }
 .alert-warning a {
     font-size: 20px;
 }
 .fr {
-    margin-top: 5em;
-    font-size: 18px;
+    /*margin-top: 5em;*/
+    /*font-size: 18px;*/
 }
 /*
     屏幕宽度小于1224px
